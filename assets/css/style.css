@@ -16,6 +16,14 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
 * ==========================================================================
 */
 
+
+.div360 {
+ position: relative;
+ width: 1920px;
+ height: 700px;
+ overflow: hidden;
+}
+
 .btn-primary{
   margin-left: 20px;
 }
@@ -53,6 +61,22 @@ License URI:http://www.gnu.org/licenses/gpl-2.0.html
   margin-left: auto;
 }
 
+/* Centered text */
+.centered-img-text-white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.centered-img-text-yellow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: yellow;
+}
 
 @media (min-width: 1068px) and (max-width: 1400px) {
  .post-sidebar{
@@ -265,6 +289,34 @@ address {
   padding: 30px;
   letter-spacing: .9px;
 }
+
+/*
+* four column divs added by TG 20230106
+*/
+
+/* Create two unequal columns that floats next to each other */
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 50px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
 @media (min-width: 800px){
 
     .side-left{
@@ -751,4 +803,34 @@ footer h3 {
   .carousel-caption .carousel-title {
     font-size: 14px;
   }
+}
+
+
+/*
+Animated 360 images by TG
+
+*/
+
+img360 {
+ position: absolute;
+}
+
+img.a {
+ position: absolute;
+ -webkit-animation: mymove1 20s linear infinite;
+}
+
+img.b {
+ position: absolute;
+ -webkit-animation: mymove2 20s linear infinite;
+}
+
+@-webkit-keyframes mymove1 {
+ from { left: -1920px; }
+ to { left: 0px; }
+}
+
+@-webkit-keyframes mymove2 {
+ from { left: 0px; }
+ to { left: 1920px; }
 }
